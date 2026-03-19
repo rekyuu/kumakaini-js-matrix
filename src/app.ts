@@ -11,17 +11,11 @@ import {SourceSystem} from "./models/sourceSystem.ts";
 import {UserAuthority} from "./models/userAuthority.ts";
 
 const homeServerUrl = process.env.KUMA_MATRIX_HOMESERVER_URL;
-const kumaUsername = process.env.KUMA_MATRIX_FULL_USERNAME;
 const accessToken = process.env.KUMA_MATRIX_ACCESS_TOKEN;
 const adminUsername = process.env.KUMA_MATRIX_ADMIN_USERNAME;
 
 if (homeServerUrl === undefined) {
     console.error("KUMA_MATRIX_HOMESERVER_URL must be defined");
-    process.exit(1);
-}
-
-if (kumaUsername === undefined) {
-    console.error("KUMA_MATRIX_FULL_USERNAME must be defined");
     process.exit(1);
 }
 
@@ -36,7 +30,7 @@ if (accessToken === undefined)
     }
 
     const auth = new MatrixAuth(homeServerUrl);
-    const authClient = await auth.passwordLogin(kumaUsername, password);
+    const authClient = await auth.passwordLogin(username, password);
 
     console.log(authClient.accessToken);
 
@@ -73,7 +67,7 @@ async function handleMessage(roomId: string, event: any) {
 
     let kumaInRoom = false;
     roomMembers.forEach((member) => {
-        if (member["event"]["sender"] === kumaUsername) {
+        if (member["event"]["sender"] === userId) {
             kumaInRoom = true;
         }
     });
