@@ -3,21 +3,21 @@ import {ResponseMedia} from "./responseMedia.ts";
 
 export class KumaResponse {
     message: string;
-    media?: ResponseMedia;
-    sourceSystem: SourceSystem;
-    channelId?: string;
+    image?: ResponseMedia;
+    source_system: SourceSystem;
+    channel_id?: string;
     timestamp: Date = new Date(Date.now());
 
     constructor(
         message: string,
-        media: ResponseMedia | undefined = undefined,
+        image: ResponseMedia | undefined = undefined,
         sourceSystem: SourceSystem,
         channelId: string | undefined = undefined,
         timestamp: Date) {
         this.message = message;
-        this.media = media;
-        this.sourceSystem = sourceSystem;
-        this.channelId = channelId;
+        this.image = image;
+        this.source_system = sourceSystem;
+        this.channel_id = channelId;
         this.timestamp = timestamp;
     }
 }

@@ -4,12 +4,12 @@ import {UserAuthority} from "./userAuthority.ts";
 export class KumaRequest {
     username: string;
     message: string;
-    sourceSystem: SourceSystem;
-    messageId?: string;
-    userAuthority: UserAuthority;
-    channelId?: string;
-    channelIsPrivate: boolean;
-    channelIsNsfw: boolean;
+    source_system: SourceSystem;
+    message_id?: string;
+    user_authority: UserAuthority;
+    channel_id?: string;
+    channel_is_private: boolean;
+    channel_is_nsfw: boolean;
 
     constructor(
         username: string,
@@ -22,11 +22,11 @@ export class KumaRequest {
         channelIsNsfw: boolean = false) {
         this.username = username;
         this.message = message;
-        this.sourceSystem = sourceSystem;
-        this.messageId = messageId;
-        this.userAuthority = userAuthority;
-        this.channelId = channelId;
-        this.channelIsPrivate = channelIsPrivate;
-        this.channelIsNsfw = channelIsNsfw;
+        this.source_system = sourceSystem;
+        this.message_id = messageId;
+        this.user_authority = userAuthority;
+        this.channel_id = channelId;
+        this.channel_is_private = channelIsPrivate;
+        this.channel_is_nsfw = channelIsNsfw;
     }
 }

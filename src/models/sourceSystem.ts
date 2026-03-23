@@ -1,7 +1,7 @@
 export enum SourceSystem {
-    Discord,
-    Telegram,
-    Terminal,
-    Twitch,
-    Matrix
+    Discord = "Discord",
+    Telegram = "Telegram",
+    Terminal = "Terminal",
+    Twitch = "Twitch",
+    Matrix = "Matrix"
 }

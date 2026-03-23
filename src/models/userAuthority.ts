@@ -1,5 +1,5 @@
 export enum UserAuthority {
     User,
-    Moderator,
+    Moderator ,
     Administrator
 }

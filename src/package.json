@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "matrix-bot-sdk": "^0.8.0",
-    "node-redis": "^0.1.7",
-    "pg": "^8.20.0"
+    "pg": "^8.20.0",
+    "redis": "^5.11.0",
+    "uuid": "^13.0.0"
   },
   "trustedDependencies": [
     "@matrix-org/matrix-sdk-crypto-nodejs"
